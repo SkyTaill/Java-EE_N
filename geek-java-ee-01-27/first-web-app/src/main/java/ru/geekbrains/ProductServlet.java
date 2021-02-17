@@ -72,6 +72,7 @@ public class ProductServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         long id;
         try {
+
             id = Long.parseLong(req.getParameter("id"));
         } catch (NumberFormatException ex) {
             resp.setStatus(400);
@@ -83,6 +84,9 @@ public class ProductServlet extends HttpServlet {
         } catch (NumberFormatException ex) {
             resp.setStatus(400);
             return;
+        }
+        if(id==-1){
+           id=productRepository.getFullIdd()+1;
         }
         Product product = new Product(id, req.getParameter("name"), req.getParameter("description"), price);
         productRepository.saveOrUpdate(product);

@@ -7,7 +7,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class ProductRepository {
-
+    private static int fullId=0;
     private final Map<Long, Product> productMap = new ConcurrentHashMap<>();
 
     private final AtomicLong identity = new AtomicLong(0);
@@ -25,10 +25,13 @@ public class ProductRepository {
             Long id = identity.incrementAndGet();
             product.setId(id);
         }
+        fullId++;
         productMap.put(product.getId(), product);
     }
 
-
+    public int getFullIdd(){
+      return fullId;
+}
     public void deleteById(Long id) {
         productMap.remove(id);
     }
