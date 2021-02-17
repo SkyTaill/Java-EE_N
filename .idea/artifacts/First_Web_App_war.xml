@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="First-Web-App:war">
+    <output-path>$PROJECT_DIR$/JavaEE-01-/First-Web-App/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>First-Web-App</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="First-Web-App.war">
+      <element id="artifact" artifact-name="First-Web-App:war exploded" />
+    </root>
+  </artifact>
+</component>
