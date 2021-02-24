@@ -1,6 +1,5 @@
 package ru.geekbrains.listener;
 
-import ru.geekbrains.User.User;
 import ru.geekbrains.persist.Product;
 import ru.geekbrains.persist.ProductRepository;
 
@@ -15,7 +14,7 @@ public class BootstrapListener implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         ProductRepository productRepository = new ProductRepository();
-        User user=new User("Name1","Surname1","EMail12");
+
         productRepository.saveOrUpdate(new Product(null, "Product  1",
                 "Description of product 1", new BigDecimal(100)));
         productRepository.saveOrUpdate(new Product(null, "Product  2",
@@ -23,8 +22,6 @@ public class BootstrapListener implements ServletContextListener {
         productRepository.saveOrUpdate(new Product(null, "Product  3",
                 "Description of product 3", new BigDecimal(200)));
 
-
         sce.getServletContext().setAttribute("productRepository", productRepository);
-        sce.getServletContext().setAttribute("user",user);
     }
 }
