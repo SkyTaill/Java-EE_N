@@ -1,0 +1,10 @@
+ru\geekbrains\listener\BootstrapListener.class
+ru\geekbrains\FirstHttpServlet.class
+ru\geekbrains\persist\Product.class
+ru\geekbrains\persist\ProductRepository.class
+ru\geekbrains\User\User.class
+ru\geekbrains\UserServlet.class
+ru\geekbrains\PageHeaderServlet.class
+ru\geekbrains\ProductServlet.class
+ru\geekbrains\FirstServlet.class
+ru\geekbrains\filter\EncodingFilter.class
